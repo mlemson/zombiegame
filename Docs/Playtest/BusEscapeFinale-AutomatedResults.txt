@@ -1,0 +1,11 @@
+PASS: Host starts in actual finale scene
+PASS: In-scene mission spawned
+PASS: Finale bus spawned
+PASS: Eleven bus windows spawned
+PASS: Remote terminal request rejected
+PASS: Departure begins drive phase
+PASS: Checkpoint requires bus
+FAIL: System.Exception: Checkpoint defense begins (bus=(-0.20, 0.11, 64.37), console=(9.00, 1.10, 80.00), player=(9.00, 1.10, 80.00))
+  at BusEscapeFinaleValidation.Check (System.Boolean ok, System.String text) [0x0001f] in C:\Users\mauri\My project\Assets\Editor\BusEscapeFinaleValidation.cs:24 
+  at BusEscapeFinaleValidation+<RunScenario>d__8.MoveNext () [0x003f9] in C:\Users\mauri\My project\Assets\Editor\BusEscapeFinaleValidation.cs:45 
+  at BusEscapeFinaleValidation.Tick () [0x00012] in C:\Users\mauri\My project\Assets\Editor\BusEscapeFinaleValidation.cs:25 

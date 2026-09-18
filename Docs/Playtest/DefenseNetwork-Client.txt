@@ -1,0 +1,10 @@
+PASS LAN client starts
+PASS Real peer retains 1.2 standing height
+PASS Client pickup acknowledged by host
+PASS Client carry presentation and collision follow replicated state
+PASS Client sees installed window board
+PASS Dropped crate restores client collider and controls
+PASS Client turret claim acknowledged
+PASS Client sees server-authoritative turret tracer
+PASS Client turret release acknowledged
+FAILED=False

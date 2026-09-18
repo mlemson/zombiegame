@@ -1,0 +1,1 @@
+Source duration 11.032s; peak 7.374s. Trim starts 7.366s; output 0.280s, mono PCM, preloaded, pitch 0.82.

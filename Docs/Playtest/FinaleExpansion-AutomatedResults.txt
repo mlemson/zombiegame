@@ -1,0 +1,19 @@
+PASS: Actual expanded finale starts as host
+PASS: Three ordered sectors require the complete evacuation loop
+PASS: Five distributed salvage/loot stops
+PASS: Two Pack-a-Punch machines available
+PASS: Rear ladder has a safe exit above bus roof
+PASS: Rear ladder accepts a player at the lower entry
+PASS: Armor purchase charges once and supplies protection
+PASS: Full armor cannot charge again
+PASS: Purchased armor does not decay to class baseline
+PASS: Bought turret kit is carried immediately
+PASS: Turret deploys as fixed non-carryable emplacement
+PASS: Deployed turret receives a 60-second lifetime
+PASS: Deployed turret damages a visible zombie
+PASS: Expired turret despawns
+PASS: Street zombie enters actual finale bus while player is at driver seat (local=(0.36, 0.77, 5.16); target=Player_Network(Clone) dead=False attacking=True knockback=False yielding=False traversing=False access=NULL boarded=BarricadableCityBus)
+PASS: Zombie hangs, crawls onto roof and blends into standing
+PASS: Roof zombie follows translating and turning bus
+PASS: Roof zombie returns to street navigation when target leaves
+Overall failed=False; actual finale scene, isolated host. Remote client and manual full lap not tested.

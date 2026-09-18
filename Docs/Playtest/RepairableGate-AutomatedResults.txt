@@ -1,0 +1,29 @@
+PASS: Gate damage sound crosses 20 percent threshold
+PASS: Gate damage sound crosses 40 percent threshold
+PASS: Gate damage sound crosses 60 percent threshold
+PASS: Gate damage sound crosses 80 percent threshold
+PASS: Gate damage sound crosses 100 percent threshold
+PASS: Gate sound ignores sub-threshold hits and healing
+PASS: Intact gate has physical and NavMesh blockers
+PASS: Attack side cannot repair
+PASS: Standing player can shoot over the 1.15m defense
+PASS: Closed gate prevents navigation through the corridor
+PASS: Existing ZombieAI approaches, attacks and breaches the gate
+PASS: Warning precedes breach by the configured minimum time
+PASS: Breach removes both blockers
+PASS: Zombie resumes normal navigation and walks through the opening
+PASS: A zombie occupying the opening prevents reconstruction
+PASS: Rebuilding after breach can be disabled
+PASS: Repair restores the configured health per second
+PASS: Clear opening can be rebuilt and fully repaired
+PASS: Repair firing lock survives other weapon-enable calls
+PASS: Ending repair releases the firing lock
+PASS: Local NGO validation host starts
+PASS: Existing network player spawns
+PASS: Damaged network gate emits fracture sound
+PASS: Server accepts a valid safe-side repair lease and blocks combat
+PASS: Server repair updates replicated health
+PASS: Release RPC ends server repair lock
+PASS: Server rejects repair from the attack side
+PASS: Missing heartbeat expires the server repair lease
+NOT TESTED: separate remote client, latency, player-controlled aiming/hold-E feel in the actual map.

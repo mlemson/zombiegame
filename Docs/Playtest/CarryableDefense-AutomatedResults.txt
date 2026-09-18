@@ -1,0 +1,40 @@
+PASS: NGO host starts
+PASS: Player starts standing at scale 1.2 after late profile assignment
+PASS: Explicit crouch lowers stance
+PASS: Explicit stand restores stance
+PASS: Server rejects distant pickup
+PASS: F pickup RPC assigns plank carrier
+PASS: One carried object per player
+PASS: Carried plank appears at camera and stops blocking movement
+PASS: Weapon switching blocked while carrying
+PASS: Plank drops onto validated floor
+PASS: Dropping releases input lock
+PASS: Window spawns with every board installed
+PASS: Carried plank installs one window board on server
+PASS: Window opening can be aimed at from inside
+PASS: Window opening can be aimed at from outside
+PASS: Consumed plank cannot be reused
+PASS: Carried plank repairs gate
+PASS: Movable crate can be picked up
+PASS: Placement inside tall wall rejected
+PASS: Movable crate can be put down again
+PASS: Crate has substantial size and durability
+PASS: Zombie stops to attack crate blocking its target
+PASS: Existing zombie attack destroys movable crate
+PASS: Destroyed crate releases blocked passage
+PASS: Mounted gun accepts operator
+PASS: Turret server clamps aim
+PASS: Turret heavy audio and muzzle effects bound
+PASS: Turret audible attack starts within 20ms; no delayed second blast
+PASS: Turret tracer and impact effects bound
+PASS: Server shot presents muzzle light and particles
+PASS: Turret release restores player state
+PASS: Starting ranged weapon has a Pack-a-Punch definition
+PASS: Pack-a-Punch buys tier once at configured price
+PASS: Weapon upgrade state survives existing level-transition reset
+PASS: Upgrade increases capacity and immediately fills larger magazine
+PASS: Second upgrade has stronger weapon glow
+PASS: Second upgrade increases magazine and reserve further
+PASS: Window traversal lifts before crossing sill and lands inside
+PASS: Actual zombie traversal climbs above sill, lands inside and restores standing (peak 1.49, end (-6.00, -0.05, 1.20), crouch False)
+Overall failed=False. Local NGO host fixture; no remote-peer campaign playthrough.

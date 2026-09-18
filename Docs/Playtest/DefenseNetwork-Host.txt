@@ -1,0 +1,11 @@
+PASS LAN host starts
+PASS Real peer retains 1.2 standing height
+PASS Host observes remote plank carrier
+PASS Host cannot steal held client plank
+PASS Host receives client board placement
+PASS Host observes remote crate carrier
+PASS Host validates remote crate floor placement
+PASS Remote player can operate turret
+PASS Host observes remote turret tracer
+PASS Remote release restores server state
+FAILED=False

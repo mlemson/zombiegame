@@ -1,0 +1,59 @@
+PASS: NGO host starts with registered bus/window prefabs
+PASS: Bus scale remains 1.4
+PASS: 11 network windows and 44 real carryable planks spawn
+PASS: Both authored door entrances exist
+PASS: Bus starts with both full and half-boarded windows
+PASS: Initial boards do not emit placement sounds
+PASS: Open window binds: Window 1 0
+PASS: Bullet ray clears opening: Window 1 0
+PASS: Open window binds: Window 1 1
+PASS: Bullet ray clears opening: Window 1 1
+PASS: Open window binds: Window 1 2
+PASS: Bullet ray clears opening: Window 1 2
+PASS: Open window binds: Window 1 3
+PASS: Bullet ray clears opening: Window 1 3
+PASS: Open window binds: Window -1 4
+PASS: Bullet ray clears opening: Window -1 4
+PASS: Open window binds: Window -1 5
+PASS: Bullet ray clears opening: Window -1 5
+PASS: Open window binds: Window -1 6
+PASS: Bullet ray clears opening: Window -1 6
+PASS: Open window binds: Window -1 7
+PASS: Bullet ray clears opening: Window -1 7
+PASS: Open window binds: Window -1 8
+PASS: Bullet ray clears opening: Window -1 8
+PASS: Open window binds: Window -1 9
+PASS: Bullet ray clears opening: Window -1 9
+PASS: Open window binds: Windscreen
+PASS: Bullet ray clears opening: Windscreen
+PASS: Uncarried wood follows translating and turning bus
+PASS: Player picks up real bus plank
+PASS: Carried wood is consumed to install window board
+PASS: Installed plank plays spatial sound through existing mixer
+PASS: Zombie jumps and reaches replicated hanging phase
+PASS: Hanging zombie follows bus translation and rotation
+PASS: Zombie breaks installed plank before crossing
+PASS: Zombie breaking a plank emits break sound
+PASS: Player cannot close a breached window around the hanging zombie
+PASS: Zombie crawls through opening and lands inside
+PASS: Opening claim releases after successful entry
+PASS: Window can be rebuilt after zombie entry
+PASS: Zombie enters through an open bus door
+PASS: Zombie exits back to street navigation when player leaves
+PASS: Second zombie grabs opposite bus side
+PASS: Killing a hanging zombie releases the opening
+Parked bus position=(4.00, 0.19, 3.50) tilt=0.04845664
+PASS: Bus rests upright before zombie crowd arrives
+PASS: All four wheels rest on the road, not cargo
+Wheel ground: Cube at (6.22, 0.00, 8.12)
+Wheel ground: Cube at (8.62, 0.00, 5.72)
+Wheel ground: Cube at (1.28, 0.00, 3.13)
+Wheel ground: Cube at (3.63, 0.00, 0.78)
+PASS: Crowded regression exceeds old 128-collider search capacity
+Crowded bus maximum rise=0.000m
+PASS: Crowd remains at bus for contact regression
+PASS: Wheel suspension excludes zombie bodies
+PASS: Every nearby zombie body pair isolated; departed zombies may restore contacts
+PASS: Crowded zombies do not lift the settled bus by more than 35 cm (rise=0.000m)
+PASS: Scaled bus accelerates using its actual WheelCollider drive controller
+Overall failed=False. Isolated NGO host; no remote client or full campaign driving test.

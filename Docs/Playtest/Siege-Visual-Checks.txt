@@ -1,0 +1,85 @@
+Turret muzzle (-0.50, 5.16, -0.49)
+SM_Prop_Turret_Base_Single_01 Center: (-0.50, 4.40, 1.80), Extents: (0.80, 0.80, 0.80)
+SM_Prop_Turret_Gattling_Base_01 Center: (-0.50, 5.15, 1.81), Extents: (0.26, 0.22, 0.87)
+SM_Prop_Turret_Gattling_Barrel_01 Center: (-0.50, 5.16, 0.25), Extents: (0.19, 0.17, 0.69)
+Muzzle flash Center: (0.00, 0.00, 0.11), Extents: (0.29, 0.29, 0.33)
+Shot tracer Center: (-0.50, 5.16, -12.99), Extents: (0.50, 0.50, 13.00)
+Bullet impacts Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00)
+Turret muzzle (10.54, 5.16, -0.49)
+SM_Prop_Turret_Base_Single_01 Center: (10.54, 4.40, 1.80), Extents: (0.80, 0.80, 0.80)
+SM_Prop_Turret_Gattling_Base_01 Center: (10.54, 5.15, 1.81), Extents: (0.26, 0.22, 0.87)
+SM_Prop_Turret_Gattling_Barrel_01 Center: (10.54, 5.16, 0.25), Extents: (0.19, 0.17, 0.69)
+Muzzle flash Center: (0.00, 0.00, 0.11), Extents: (0.29, 0.29, 0.33)
+Shot tracer Center: (10.54, 5.16, -12.99), Extents: (0.50, 0.50, 13.00)
+Bullet impacts Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00)
+Turret muzzle (-12.55, 7.10, 36.24)
+SM_Prop_Turret_Base_Single_01 Center: (-12.55, 6.34, 38.53), Extents: (0.80, 0.80, 0.80)
+SM_Prop_Turret_Gattling_Base_01 Center: (-12.55, 7.09, 38.54), Extents: (0.26, 0.22, 0.87)
+SM_Prop_Turret_Gattling_Barrel_01 Center: (-12.55, 7.10, 36.98), Extents: (0.19, 0.17, 0.69)
+Muzzle flash Center: (0.00, 0.00, 0.11), Extents: (0.29, 0.29, 0.33)
+Shot tracer Center: (-12.55, 7.10, 23.74), Extents: (0.50, 0.50, 13.00)
+Bullet impacts Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00)
+Turret muzzle (1.88, 4.62, 66.92)
+SM_Prop_Turret_Base_Single_01 Center: (1.88, 3.86, 69.21), Extents: (0.80, 0.80, 0.80)
+SM_Prop_Turret_Gattling_Base_01 Center: (1.88, 4.61, 69.22), Extents: (0.26, 0.22, 0.87)
+SM_Prop_Turret_Gattling_Barrel_01 Center: (1.88, 4.62, 67.66), Extents: (0.19, 0.17, 0.69)
+Muzzle flash Center: (0.00, 0.00, 0.11), Extents: (0.29, 0.29, 0.33)
+Shot tracer Center: (1.88, 4.62, 54.42), Extents: (0.50, 0.50, 13.00)
+Bullet impacts Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00)
+Turret muzzle (-1.09, 11.25, 97.71)
+SM_Prop_Turret_Base_Single_01 Center: (-1.09, 10.49, 100.00), Extents: (0.80, 0.80, 0.80)
+SM_Prop_Turret_Gattling_Base_01 Center: (-1.09, 11.24, 100.01), Extents: (0.26, 0.22, 0.87)
+SM_Prop_Turret_Gattling_Barrel_01 Center: (-1.09, 11.25, 98.45), Extents: (0.19, 0.17, 0.69)
+Muzzle flash Center: (0.00, 0.00, 0.11), Extents: (0.29, 0.29, 0.33)
+Shot tracer Center: (-1.09, 11.25, 85.21), Extents: (0.50, 0.50, 13.00)
+Bullet impacts Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00)
+Turret muzzle (-0.71, 1.37, 76.49)
+SM_Prop_Turret_Base_Single_01 Center: (-0.71, 0.61, 78.78), Extents: (0.80, 0.80, 0.80)
+SM_Prop_Turret_Gattling_Base_01 Center: (-0.71, 1.36, 78.79), Extents: (0.26, 0.22, 0.87)
+SM_Prop_Turret_Gattling_Barrel_01 Center: (-0.71, 1.37, 77.23), Extents: (0.19, 0.17, 0.69)
+Muzzle flash Center: (0.00, 0.00, 0.11), Extents: (0.29, 0.29, 0.33)
+Shot tracer Center: (-0.71, 1.37, 63.99), Extents: (0.50, 0.50, 13.00)
+Bullet impacts Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00)
+Window WallBarricadeWindow: missing boards 0, sill lift 1.54; start (-3.00, 0.00, -0.90), end (-3.00, 0.00, 1.20)
+Window BarricadeWindow: missing boards 0, sill lift 0.08; start (-20.10, 0.00, 34.80), end (-18.00, 0.00, 34.80)
+Window Plankable SM_Buildings_WallWindow_5x3_01P (1): missing boards 0, sill lift 1.54; start (13.96, 0.07, -0.90), end (13.96, 0.07, 1.20)
+Window Plankable SM_Buildings_WallWindow_5x3_01P (2): missing boards 0, sill lift 1.54; start (20.69, 0.07, 19.18), end (18.59, 0.07, 19.18)
+Window Plankable SM_Buildings_WallWindow_5x3_01P (4): missing boards 0, sill lift 1.54; start (13.40, 0.07, 44.44), end (11.30, 0.07, 44.44)
+Window Plankable SM_Buildings_WallWindow_5x3_01P (5): missing boards 0, sill lift 1.54; start (-18.26, 0.07, 49.52), end (-16.16, 0.07, 49.52)
+Window Plankable SM_Buildings_WallWindow_5x3_01P (6): missing boards 0, sill lift 1.15; start (-14.22, 0.07, 62.39), end (-12.12, 0.08, 62.39)
+Window Plankable SM_Buildings_WallWindow_5x3_01P (7): missing boards 0, sill lift 1.15; start (23.77, 0.07, 67.27), end (21.67, 0.07, 67.27)
+Window Plankable SM_Buildings_WallWindow_5x3_01P (8): missing boards 0, sill lift 1.15; start (23.77, 0.07, 80.20), end (21.67, 0.07, 80.20)
+Window Plankable SM_Buildings_WallWindow_5x3_01P (9): missing boards 0, sill lift 1.15; start (13.41, 5.41, 105.51), end (11.31, 5.49, 105.51)
+Window Plankable SM_Buildings_WallWindow_5x3_01P (10): missing boards 0, sill lift 1.15; start (-18.37, 5.41, 98.44), end (-16.27, 5.49, 98.44)
+Window Plankable SM_Buildings_WallWindow_5x3_01P (11): missing boards 0, sill lift 1.15; start (-2.42, 5.42, 114.91), end (-2.42, 5.49, 112.81)
+Window Plankable SM_Buildings_WallWindow_5x3_01P (3): missing boards 0, sill lift 1.54; start (-11.15, 0.07, 14.95), end (-9.05, 0.07, 14.95)
+Upgrade 0: magazine 5, ammo capacity 38, glow 0
+Upgrade 1: magazine 9, ammo capacity 75, glow 2
+Upgrade 2: magazine 13, ammo capacity 113, glow 5
+Primary_Weapon: Universal Render Pipeline/Lit, emission property True, keyword True
+Primary_Weapon_Container_01: Universal Render Pipeline/Lit, emission property True, keyword True
+Primary_Weapon_Container_01: Universal Render Pipeline/Lit, emission property True, keyword True
+VFX_GunCylinder: Universal Render Pipeline/Particles/Unlit, emission property True, keyword True
+VFX_GunCylinder: Universal Render Pipeline/Particles/Unlit, emission property True, keyword True
+Primary_Weapon_Container_02: Universal Render Pipeline/Lit, emission property True, keyword True
+Primary_Weapon_Container_02: Universal Render Pipeline/Lit, emission property True, keyword True
+VFX_GunCylinder: Universal Render Pipeline/Particles/Unlit, emission property True, keyword True
+VFX_GunCylinder: Universal Render Pipeline/Particles/Unlit, emission property True, keyword True
+Primary_Weapon_Container_03: Universal Render Pipeline/Lit, emission property True, keyword True
+Primary_Weapon_Container_03: Universal Render Pipeline/Lit, emission property True, keyword True
+VFX_GunCylinder: Universal Render Pipeline/Particles/Unlit, emission property True, keyword True
+VFX_GunCylinder: Universal Render Pipeline/Particles/Unlit, emission property True, keyword True
+Primary_Weapon_Container_04: Universal Render Pipeline/Lit, emission property True, keyword True
+Primary_Weapon_Container_04: Universal Render Pipeline/Lit, emission property True, keyword True
+VFX_GunCylinder: Universal Render Pipeline/Particles/Unlit, emission property True, keyword True
+VFX_GunCylinder: Universal Render Pipeline/Particles/Unlit, emission property True, keyword True
+Primary_Weapon_Front_Piece_01: Universal Render Pipeline/Lit, emission property True, keyword True
+Primary_Weapon_Front_Piece_02: Universal Render Pipeline/Lit, emission property True, keyword True
+VFX_OverheatPrimary: Universal Render Pipeline/Particles/Unlit, emission property True, keyword True
+StarterPistol_Model: Universal Render Pipeline/Lit, emission property True, keyword True
+SM_Wep_Pistol_Mag_01: Universal Render Pipeline/Lit, emission property True, keyword True
+SM_Wep_Pistol_Silencer_01: Universal Render Pipeline/Lit, emission property True, keyword True
+SM_Wep_Pistol_Slide_01: Universal Render Pipeline/Lit, emission property True, keyword True
+SM_Wep_Pistol_Trigger_01: Universal Render Pipeline/Lit, emission property True, keyword True
+MarksmanRifle_Model: Universal Render Pipeline/Lit, emission property True, keyword True
+hands_svd: Universal Render Pipeline/Lit, emission property True, keyword False
