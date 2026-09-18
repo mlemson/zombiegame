@@ -107,6 +107,7 @@ namespace Unity.FPS.AI
             GameObject selectedPrefab = ZombiePrefabs[Random.Range(0, ZombiePrefabs.Count)];
             GameObject zombie = Instantiate(selectedPrefab, spawnPosition, spawnRotation);
             zombie.tag = "Enemy";
+            zombie.GetComponent<ZombieAI>()?.PrepareForNetworkSpawn();
             NetworkObject networkObject = zombie.GetComponent<NetworkObject>();
             if (networkObject != null && NetworkManager.Singleton != null && NetworkManager.Singleton.IsServer)
                 networkObject.Spawn(true);
