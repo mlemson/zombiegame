@@ -241,10 +241,19 @@ namespace Unity.FPS.AI
         void OnDeadNetworkStateChanged(bool previous, bool current)
         {
             if (!IsServer && current && !m_IsDead)
-            {
-                ApplyReplicatedDeathContext();
-                ApplyRemoteDeathVisuals();
-            }
+                StartCoroutine(ApplyRemoteDeathAfterNetworkUpdate());
+        }
+
+        IEnumerator ApplyRemoteDeathAfterNetworkUpdate()
+        {
+            // NetworkVariables are deserialized in the same network update but their
+            // callbacks may run before sibling variables have raised their own changes.
+            // Waiting one frame makes the headshot context available before we lock in
+            // the one-shot death presentation.
+            yield return null;
+            if (IsServer || m_IsDead || !IsDeadNetworkState.Value) yield break;
+            ApplyReplicatedDeathContext();
+            ApplyRemoteDeathVisuals();
         }
 
         void ApplyReplicatedDeathContext()
