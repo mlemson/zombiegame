@@ -190,6 +190,7 @@ namespace ZombieTown.Survival
                 NavMeshAgent agent = instance.GetComponent<NavMeshAgent>();
                 if (agent != null) agent.speed = zombie.MoveSpeed;
             }
+            zombie?.PrepareForNetworkSpawn();
             NetworkObject networkObject = instance.GetComponent<NetworkObject>();
             if (networkObject != null) networkObject.Spawn(true);
             else Destroy(instance);
@@ -246,6 +247,7 @@ namespace ZombieTown.Survival
                     };
                     variant.Configure(types[i % types.Length]);
                 }
+                instance.GetComponent<ZombieAI>()?.PrepareForNetworkSpawn();
                 NetworkObject networkObject = instance.GetComponent<NetworkObject>();
                 if (networkObject != null) networkObject.Spawn(true);
                 else Destroy(instance);

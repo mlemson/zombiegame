@@ -146,6 +146,9 @@ namespace Unity.FPS.AI
         private bool m_IsDead;
         public readonly NetworkVariable<float> SyncedHealth = new();
         public readonly NetworkVariable<bool> IsDeadNetworkState = new(false);
+        public readonly NetworkVariable<bool> LethalHeadshotNetworkState = new(false);
+        public readonly NetworkVariable<Vector3> LethalHeadshotPoint = new();
+        public readonly NetworkVariable<Vector3> LethalHeadshotDirection = new();
         private Coroutine m_AttackRoutine;
         private Transform m_HeadTransform;
         private bool m_HasPendingHeadshot;
@@ -202,13 +205,19 @@ namespace Unity.FPS.AI
             if (IsServer && m_Health != null)
             {
                 SyncedHealth.Value = m_Health.CurrentHealth;
+                LethalHeadshotNetworkState.Value = m_WasLethalHeadshot;
+                LethalHeadshotPoint.Value = m_HeadshotPoint;
+                LethalHeadshotDirection.Value = m_HeadshotDirection;
                 IsDeadNetworkState.Value = m_IsDead;
             }
             else if (m_Health != null)
             {
                 m_Health.CurrentHealth = Mathf.Clamp(SyncedHealth.Value, 0f, m_Health.MaxHealth);
                 if (IsDeadNetworkState.Value && !m_IsDead)
+                {
+                    ApplyReplicatedDeathContext();
                     ApplyRemoteDeathVisuals();
+                }
             }
         }
 
@@ -222,17 +231,37 @@ namespace Unity.FPS.AI
         void OnSyncedHealthChanged(float previous, float current)
         {
             if (!IsServer && m_Health != null)
-            {
                 m_Health.CurrentHealth = Mathf.Clamp(current, 0f, m_Health.MaxHealth);
-                if (current <= 0f && !m_IsDead)
-                    ApplyRemoteDeathVisuals();
-            }
+
+            // Do not start the death presentation from health alone. The dedicated
+            // death NetworkVariable is written after headshot context, so it is the
+            // single ordered trigger for remote death visuals.
         }
 
         void OnDeadNetworkStateChanged(bool previous, bool current)
         {
             if (!IsServer && current && !m_IsDead)
-                ApplyRemoteDeathVisuals();
+                StartCoroutine(ApplyRemoteDeathAfterNetworkUpdate());
+        }
+
+        IEnumerator ApplyRemoteDeathAfterNetworkUpdate()
+        {
+            // NetworkVariables are deserialized in the same network update but their
+            // callbacks may run before sibling variables have raised their own changes.
+            // Waiting one frame makes the headshot context available before we lock in
+            // the one-shot death presentation.
+            yield return null;
+            if (IsServer || m_IsDead || !IsDeadNetworkState.Value) yield break;
+            ApplyReplicatedDeathContext();
+            ApplyRemoteDeathVisuals();
+        }
+
+        void ApplyReplicatedDeathContext()
+        {
+            m_WasLethalHeadshot = LethalHeadshotNetworkState.Value;
+            if (!m_WasLethalHeadshot) return;
+            m_HeadshotPoint = LethalHeadshotPoint.Value;
+            m_HeadshotDirection = LethalHeadshotDirection.Value;
         }
 
         void Awake()
@@ -2191,6 +2220,15 @@ namespace Unity.FPS.AI
             return false;
         }
 
+        /// <summary>
+        /// Snaps a freshly instantiated zombie to the ground before NetworkObject.Spawn
+        /// serializes its initial transform for remote clients.
+        /// </summary>
+        public void PrepareForNetworkSpawn()
+        {
+            AlignToGround();
+        }
+
         void AlignToGround()
         {
             Collider collider = GetComponent<Collider>();
@@ -2418,6 +2456,9 @@ namespace Unity.FPS.AI
                 col.enabled = false;
             }
 
+            if (m_WasLethalHeadshot)
+                PlayHeadshotDeath();
+
             if (m_ZombieAudio != null)
             {
                 m_ZombieAudio.PlayDeath();
@@ -2444,6 +2485,9 @@ namespace Unity.FPS.AI
             if (IsSpawned && IsServer)
             {
                 SyncedHealth.Value = m_Health != null ? m_Health.CurrentHealth : 0f;
+                LethalHeadshotNetworkState.Value = m_WasLethalHeadshot;
+                LethalHeadshotPoint.Value = m_HeadshotPoint;
+                LethalHeadshotDirection.Value = m_HeadshotDirection;
                 IsDeadNetworkState.Value = true;
             }
 
@@ -2557,11 +2601,7 @@ namespace Unity.FPS.AI
             if (source != null) m_LastDamageSource = source;
 
             if (IsCombatAuthority && IsSpawned && m_Health != null)
-            {
                 SyncedHealth.Value = m_Health.CurrentHealth;
-                if (m_Health.CurrentHealth <= 0f)
-                    IsDeadNetworkState.Value = true;
-            }
 
             // Health invokes OnDamaged after subtracting damage but before OnDie.
             // Never arm Hit for a lethal frame: that trigger could interrupt the

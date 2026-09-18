@@ -14,7 +14,6 @@ namespace ZombieTown.Multiplayer
         static readonly int Attack = Animator.StringToHash("Attack");
         Animator animator;
         Health health;
-        public readonly NetworkVariable<float> SyncedHealth = new();
         public readonly NetworkVariable<byte> WindowPose = new();
         byte appliedWindowPose;
         public readonly NetworkVariable<NetworkObjectReference> BusGripWindow = new();
@@ -78,38 +77,13 @@ namespace ZombieTown.Multiplayer
 
         public override void OnNetworkSpawn()
         {
-            SyncedHealth.OnValueChanged += OnSyncedHealthChanged;
             WindowPose.OnValueChanged+=ApplyWindowPose;
             if(WindowPose.Value!=0)ApplyWindowPose(0,WindowPose.Value);
-            if (health != null) health.OnDamaged += SyncHealth;
-            if (health != null) health.OnHealed += SyncHealth;
-            if (IsServer && health != null) SyncedHealth.Value = health.CurrentHealth;
         }
 
         public override void OnNetworkDespawn()
         {
-            SyncedHealth.OnValueChanged -= OnSyncedHealthChanged;
             WindowPose.OnValueChanged-=ApplyWindowPose;
-            if (health != null) health.OnDamaged -= SyncHealth;
-            if (health != null) health.OnHealed -= SyncHealth;
-        }
-
-        void SyncHealth(float _)
-        {
-            if (IsServer && health != null) SyncedHealth.Value = health.CurrentHealth;
-        }
-
-        void SyncHealth(float _, GameObject source) => SyncHealth(0f);
-
-        void OnSyncedHealthChanged(float previous, float current)
-        {
-            if (IsServer) return;
-            if (health != null) health.CurrentHealth = current;
-            if (current <= 0f && animator != null)
-            {
-                animator.SetBool(IsDead, true);
-                animator.CrossFadeInFixedTime(Animator.StringToHash("Base Layer.Die"), .04f);
-            }
         }
 
         public void PlayHit()

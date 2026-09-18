@@ -266,6 +266,7 @@ namespace ZombieTown.LevelThree
             if (!NavMesh.SamplePosition(point.position, out NavMeshHit hit, 8f, NavMesh.AllAreas))
                 return;
             GameObject instance = Instantiate(prefab, hit.position + Vector3.up * .05f, point.rotation);
+            instance.GetComponent<ZombieAI>()?.PrepareForNetworkSpawn();
             NetworkObject networkObject = instance.GetComponent<NetworkObject>();
             if (networkObject != null) networkObject.Spawn(true);
         }
@@ -313,6 +314,7 @@ namespace ZombieTown.LevelThree
                 variant.Configure(kinds[Random.Range(0, kinds.Length)]);
             }
 
+            zombieAI?.PrepareForNetworkSpawn();
             NetworkObject networkObject = instance.GetComponent<NetworkObject>();
             if (networkObject != null) networkObject.Spawn(true);
         }
