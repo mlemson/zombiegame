@@ -580,6 +580,7 @@ namespace ZombieTown.LevelFour
                 NavMeshAgent navigation = instance.GetComponent<NavMeshAgent>();
                 if (navigation != null) navigation.speed = zombie.MoveSpeed;
             }
+            zombie?.PrepareForNetworkSpawn();
             NetworkObject networkObject = instance.GetComponent<NetworkObject>();
             if (networkObject != null) networkObject.Spawn(true);
         }
@@ -686,6 +687,7 @@ namespace ZombieTown.LevelFour
                     zombie.GroundOffset *= smallOrcScaleMultiplier;
                     zombie.ConfigureLargeZombie();
                 }
+                zombie?.PrepareForNetworkSpawn();
                 NetworkObject networkObject = instance.GetComponent<NetworkObject>();
                 if (networkObject != null) networkObject.Spawn(true);
             }
