@@ -1,5 +1,7 @@
 using Unity.FPS.Game;
 using UnityEngine;
+using Unity.Netcode;
+using ZombieTown.Multiplayer;
 
 namespace Unity.FPS.Gameplay
 {
@@ -27,6 +29,19 @@ namespace Unity.FPS.Gameplay
 
         protected override bool TryPick(PlayerCharacterController byPlayer)
         {
+            PlayerClassController networkPlayer = byPlayer.GetComponent<PlayerClassController>();
+            if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening &&
+                NetworkManager.Singleton.IsServer && networkPlayer != null && networkPlayer.IsSpawned)
+            {
+                if (!networkPlayer.TryGrantNetworkAmmoPickup(UseActiveWeaponBalance, BulletCount,
+                        AmmoValueBudget, MinimumRounds, MaximumRounds, false))
+                    return false;
+
+                PlayPickupFeedback();
+                DespawnOrDestroyPickup();
+                return true;
+            }
+
             IAmmoPickupFilter filter = byPlayer.GetComponent<IAmmoPickupFilter>();
             if (filter != null && !filter.CanPickupAmmo)
                 return false;
@@ -56,7 +71,7 @@ namespace Unity.FPS.Gameplay
                 if (targetWeapon != null && targetWeapon.HasPhysicalBullets && !targetWeapon.IsMeleeWeapon)
                 {
                     int bullets = UseActiveWeaponBalance
-                        ? CalculateBalancedRoundCount(targetWeapon)
+                        ? CalculateBalancedRoundCount(targetWeapon, AmmoValueBudget, MinimumRounds, MaximumRounds)
                         : BulletCount;
                     int ammoBefore = targetWeapon.GetCarriedPhysicalBullets();
                     targetWeapon.AddCarriablePhysicalBullets(bullets);
@@ -77,8 +92,10 @@ namespace Unity.FPS.Gameplay
             return false;
         }
 
-        int CalculateBalancedRoundCount(WeaponController weapon)
+        public static int CalculateBalancedRoundCount(WeaponController weapon, float ammoValueBudget,
+            int minimumRounds, int maximumRounds)
         {
+            if (weapon == null) return 0;
             float damagePerShot = 17f;
             ProjectileStandard projectile = weapon.ProjectilePrefab != null
                 ? weapon.ProjectilePrefab.GetComponent<ProjectileStandard>()
@@ -90,10 +107,12 @@ namespace Unity.FPS.Gameplay
                     damagePerShot *= 2.5f;
             }
 
-            int capacityLimit = Mathf.Max(MinimumRounds, Mathf.CeilToInt(weapon.AmmoCapacity * .25f));
-            int calculated = Mathf.RoundToInt(Mathf.Max(1f, AmmoValueBudget) / damagePerShot);
-            return Mathf.Clamp(calculated, Mathf.Max(1, MinimumRounds),
-                Mathf.Max(MinimumRounds, Mathf.Min(MaximumRounds, capacityLimit)));
+            int safeMinimum = Mathf.Max(1, minimumRounds);
+            int safeMaximum = Mathf.Max(safeMinimum, maximumRounds);
+            int capacityLimit = Mathf.Max(safeMinimum, Mathf.CeilToInt(weapon.AmmoCapacity * .25f));
+            int calculated = Mathf.RoundToInt(Mathf.Max(1f, ammoValueBudget) / damagePerShot);
+            return Mathf.Clamp(calculated, safeMinimum,
+                Mathf.Max(safeMinimum, Mathf.Min(safeMaximum, capacityLimit)));
         }
     }
 }
