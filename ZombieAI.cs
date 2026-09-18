@@ -2191,6 +2191,15 @@ namespace Unity.FPS.AI
             return false;
         }
 
+        /// <summary>
+        /// Snaps a freshly instantiated zombie to the ground before NetworkObject.Spawn
+        /// serializes its initial transform for remote clients.
+        /// </summary>
+        public void PrepareForNetworkSpawn()
+        {
+            AlignToGround();
+        }
+
         void AlignToGround()
         {
             Collider collider = GetComponent<Collider>();
