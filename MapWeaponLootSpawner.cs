@@ -4,6 +4,7 @@ using Unity.FPS.Gameplay;
 using UnityEngine;
 using UnityEngine.AI;
 using ZombieTown.Progression;
+using ZombieTown.LevelTwo;
 
 namespace Unity.FPS.AI
 {
@@ -17,9 +18,7 @@ namespace Unity.FPS.AI
         {
             yield return null;
 
-            PlayerCharacterController player = FindAnyObjectByType<PlayerCharacterController>();
-            if (player == null)
-                yield break;
+            Vector3 center = ResolveLootCenter();
 
             // Keep placement deterministic between runs and distribute every weapon
             // around a complete circle instead of overlapping after the third pickup.
@@ -40,11 +39,30 @@ namespace Unity.FPS.AI
                 if (pickupPrefab == null)
                     continue;
 
-                Vector3 position = FindLootPosition(player.transform.position, i, WeaponPickupPrefabs.Count);
+                Vector3 position = FindLootPosition(center, i, WeaponPickupPrefabs.Count);
                 GameObject instance = Instantiate(pickupPrefab, position + Vector3.up * 0.15f,
                     Quaternion.Euler(0f, i * (360f / Mathf.Max(1, WeaponPickupPrefabs.Count)), 0f));
                 WeaponShopConverter.Convert(instance.GetComponent<WeaponPickup>());
             }
+        }
+
+        Vector3 ResolveLootCenter()
+        {
+            // Shop terminals are intentionally local scene objects rather than networked
+            // pickups. Every peer must therefore derive exactly the same world positions.
+            // Never anchor them to FindAnyObjectByType<PlayerCharacterController>(), because
+            // that can resolve to a different player on each machine.
+            LevelPlayerSpawn[] starts = FindObjectsByType<LevelPlayerSpawn>();
+            if (starts != null && starts.Length > 0)
+            {
+                System.Array.Sort(starts, (left, right) =>
+                    string.CompareOrdinal(left != null ? left.name : string.Empty,
+                        right != null ? right.name : string.Empty));
+                if (starts[0] != null)
+                    return starts[0].transform.position;
+            }
+
+            return transform.position;
         }
 
         Vector3 FindLootPosition(Vector3 center, int index, int count)
