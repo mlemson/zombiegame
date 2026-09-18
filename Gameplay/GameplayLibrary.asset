@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200d2bd6cdd95b64d87fac0999ab1efe, type: 3}
+  m_Name: GameplayLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieTown.Foundation.GameplayPrefabLibrary
+  prefabs:
+  - use: 'Repareerbare poort: +Z veilig / -Z aanval'
+    prefab: {fileID: 6996024715193968522, guid: f34ddce5a0d2ad14a851743948967a45,
+      type: 3}
+  - use: 'Vaste bouwplek: materialen / houd E'
+    prefab: {fileID: 4751751153693386266, guid: ed7d237fe99f89d4584b2f7484774d49,
+      type: 3}
+  - use: 'Mitrailleur: +Z vuurrichting / E in en uit'
+    prefab: {fileID: 6578516729657384041, guid: a822bf22af0ffce478e543a3347fd1fa,
+      type: 3}
+  - use: 'Ladder: 3.6m / bovenuitgang op loopvloer'
+    prefab: {fileID: 3281211890008125350, guid: b94dc9d51bcb0894984d92a6b734c3b4,
+      type: 3}
+  - use: Repareerbaar raam
+    prefab: {fileID: 5474028651716685281, guid: 4ce77b3c485c879469713d0d33bff07b,
+      type: 3}
+  - use: Pack-a-Punch
+    prefab: {fileID: 8607733048194735798, guid: 1bcb0048db5aa44448eee4bb7f8f08a1,
+      type: 3}
+  - use: Wapenpunt
+    prefab: {fileID: 232003850242204184, guid: 0af910b82a239664a8e8e18dc1fc46b1, type: 3}
+  - use: Wall module with repairable window; +Z safe
+    prefab: {fileID: 392403469698651921, guid: aff8c05f8f95db4429572196926c8554, type: 3}
+  - use: "Large red repairable defense gate \u2014 5.4 x 4.2m / safe +Z"
+    prefab: {fileID: 6585948668324997937, guid: 7f6a949cd9dccc9439119e6163f059a2,
+      type: 3}
+  - use: Leesbaar contextbord; koppel Source, Caption of Weapon Point
+    prefab: {fileID: 659185780088023820, guid: 26c3c255460ddb34daf4e938b0e0e833, type: 3}
+  - use: Clean weapon shop prefab; place directly and change terminal weapon if needed
+    prefab: {fileID: 7273533595147950598, guid: 5cddb664eac3a9943ae0e2f13285e235,
+      type: 3}
+  - use: Clean weapon shop prefab; place directly and change terminal weapon if needed
+    prefab: {fileID: 3081595853715030386, guid: 687b5fb69c0ceb34ea39763957f99b76,
+      type: 3}
+  - use: Clean weapon shop prefab; place directly and change terminal weapon if needed
+    prefab: {fileID: 4489941798904675486, guid: d7bfeebd2203b134881f680974841c67,
+      type: 3}
+  - use: Clean weapon shop prefab; place directly and change terminal weapon if needed
+    prefab: {fileID: 1010325939361184917, guid: b37a64fcee3e2a7419145407aeba4e15,
+      type: 3}
+  - use: Clean weapon shop prefab; place directly and change terminal weapon if needed
+    prefab: {fileID: 8675236179847099244, guid: 7f62e3430a9cb6b43989643defb54211,
+      type: 3}
+  - use: Clean weapon shop prefab; place directly and change terminal weapon if needed
+    prefab: {fileID: 2502326520479108261, guid: 24c634817abfe474381171b9758470db,
+      type: 3}
+  - use: Clean weapon shop prefab; place directly and change terminal weapon if needed
+    prefab: {fileID: 5952544350143077330, guid: b0406499e81416e4e852bfffc6511f12,
+      type: 3}
+  - use: Clean weapon shop prefab; place directly and change terminal weapon if needed
+    prefab: {fileID: 3338044759832280680, guid: 11629a4b1f092db45bb8b16089db9b36,
+      type: 3}
+  - use: Clean weapon shop prefab; place directly and change terminal weapon if needed
+    prefab: {fileID: 4779744283431111569, guid: 2430fb508b184d8449deacdbf1ff83d9,
+      type: 3}
+  - use: Clean weapon shop prefab; place directly and change terminal weapon if needed
+    prefab: {fileID: 1802513611423857268, guid: a9ed637f93176a54fbbda96d3cb3bce9,
+      type: 3}
+  - use: Clean weapon shop prefab; place directly and change terminal weapon if needed
+    prefab: {fileID: 7052786863949470677, guid: a8647cbae67e48543906640a4caefda3,
+      type: 3}
