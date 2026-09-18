@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba8521bc17dd37408990f0af75f5a45, type: 3}
+  m_Name: weapon.launcher.upgrades
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieTown.Foundation.WeaponUpgradeDefinition
+  weaponKey: weapon.launcher
+  level1:
+    cost: -1
+    damageMultiplier: 1.6
+    attackDelayMultiplier: 0.8
+    magazineMultiplier: 1.75
+    reserveMultiplier: 2
+    audioPitchOffset: 0.08
+    audioVolumeOffset: 0.12
+    visualPreset: {fileID: 0}
+    glowColor: {r: 0.03, g: 0.45, b: 1, a: 1}
+    glowIntensity: 2
+    replacementWeaponPrefab: {fileID: 0}
+  level2:
+    cost: -1
+    damageMultiplier: 2.4
+    attackDelayMultiplier: 0.6
+    magazineMultiplier: 2.5
+    reserveMultiplier: 3
+    audioPitchOffset: 0.16
+    audioVolumeOffset: 0.22
+    visualPreset: {fileID: 0}
+    glowColor: {r: 0.6, g: 0.08, b: 1, a: 1}
+    glowIntensity: 5
+    replacementWeaponPrefab: {fileID: 0}

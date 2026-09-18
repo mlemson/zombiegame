@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7d834c073f6ff49a83c31d000a4bea, type: 3}
+  m_Name: PlayerCountScalingProfile
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieTown.Foundation.PlayerCountScalingProfile
+  entries:
+  - playerCount: 1
+    enemyBudgetMultiplier: 0.65
+    enemyHealthMultiplier: 0.95
+    enemyDamageMultiplier: 0.85
+    specialEnemyMultiplier: 0.5
+    gateCostMultiplier: 0.65
+    maxAliveEnemies: 16
+    rewardMultiplier: 1
+    weaponPurchaseMultiplier: 1
+    upgradePurchaseMultiplier: 1
+  - playerCount: 2
+    enemyBudgetMultiplier: 1
+    enemyHealthMultiplier: 1
+    enemyDamageMultiplier: 0.95
+    specialEnemyMultiplier: 0.75
+    gateCostMultiplier: 0.9
+    maxAliveEnemies: 24
+    rewardMultiplier: 1
+    weaponPurchaseMultiplier: 1
+    upgradePurchaseMultiplier: 1
+  - playerCount: 3
+    enemyBudgetMultiplier: 1.28
+    enemyHealthMultiplier: 1.03
+    enemyDamageMultiplier: 1
+    specialEnemyMultiplier: 1
+    gateCostMultiplier: 1.05
+    maxAliveEnemies: 30
+    rewardMultiplier: 1
+    weaponPurchaseMultiplier: 1
+    upgradePurchaseMultiplier: 1
+  - playerCount: 4
+    enemyBudgetMultiplier: 1.55
+    enemyHealthMultiplier: 1.06
+    enemyDamageMultiplier: 1
+    specialEnemyMultiplier: 1.2
+    gateCostMultiplier: 1.2
+    maxAliveEnemies: 36
+    rewardMultiplier: 1
+    weaponPurchaseMultiplier: 1
+    upgradePurchaseMultiplier: 1
+  - playerCount: 5
+    enemyBudgetMultiplier: 1.78
+    enemyHealthMultiplier: 1.1
+    enemyDamageMultiplier: 1.03
+    specialEnemyMultiplier: 1.35
+    gateCostMultiplier: 1.35
+    maxAliveEnemies: 42
+    rewardMultiplier: 1
+    weaponPurchaseMultiplier: 1
+    upgradePurchaseMultiplier: 1
+  - playerCount: 6
+    enemyBudgetMultiplier: 2
+    enemyHealthMultiplier: 1.14
+    enemyDamageMultiplier: 1.05
+    specialEnemyMultiplier: 1.5
+    gateCostMultiplier: 1.5
+    maxAliveEnemies: 48
+    rewardMultiplier: 1
+    weaponPurchaseMultiplier: 1
+    upgradePurchaseMultiplier: 1
+  - playerCount: 7
+    enemyBudgetMultiplier: 2.2
+    enemyHealthMultiplier: 1.18
+    enemyDamageMultiplier: 1.08
+    specialEnemyMultiplier: 1.65
+    gateCostMultiplier: 1.65
+    maxAliveEnemies: 54
+    rewardMultiplier: 1
+    weaponPurchaseMultiplier: 1
+    upgradePurchaseMultiplier: 1
+  - playerCount: 8
+    enemyBudgetMultiplier: 2.4
+    enemyHealthMultiplier: 1.22
+    enemyDamageMultiplier: 1.1
+    specialEnemyMultiplier: 1.8
+    gateCostMultiplier: 1.8
+    maxAliveEnemies: 60
+    rewardMultiplier: 1
+    weaponPurchaseMultiplier: 1
+    upgradePurchaseMultiplier: 1

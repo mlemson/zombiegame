@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e5d0c0c499fa1b4fa6da4bae1764c99, type: 3}
+  m_Name: DefenseAudioSettings
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieTown.Foundation.DefenseAudioSettings
+  plankPlaced: {fileID: 8300000, guid: 5af6229215135d8409fbaf4dd0a0f4e7, type: 3}
+  plankBroken: {fileID: 8300000, guid: da934646234e99041a49928bd300a693, type: 3}
+  gateBreak: {fileID: 8300000, guid: a0df6087db3c58d43b35bda4ad557ce2, type: 3}
+  volume: 0.65

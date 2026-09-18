@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ebd9f3904d57249809d854bae7dcc7, type: 3}
+  m_Name: WeaponCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieTown.Foundation.WeaponCatalog
+  entries:
+  - {fileID: 11400000, guid: fbe42780e95f71d4ea989910b1fa9393, type: 2}
+  - {fileID: 11400000, guid: ef7cbc582745a7943acf90269d4098c3, type: 2}
+  - {fileID: 11400000, guid: 5d0006d40ea1d7a46adb905bee809af4, type: 2}
+  - {fileID: 11400000, guid: d5314ab18bab3d04ca4e501bc61fd4f6, type: 2}
+  - {fileID: 11400000, guid: ef56724d3e6f9ef43bcde78ca31ccd26, type: 2}
+  - {fileID: 11400000, guid: b0fc92a0d07bb404ba3e86f5e35258ff, type: 2}
+  - {fileID: 11400000, guid: 5b8828f2f9e49724bba2baff61398210, type: 2}
+  - {fileID: 11400000, guid: 4c301e18d983f1544bd0c0a614d72c1c, type: 2}
+  - {fileID: 11400000, guid: 5b374e58f424f024cbff4c3b96b05c00, type: 2}
+  - {fileID: 11400000, guid: cf7a2368c453c244995cbd81bdd96d63, type: 2}

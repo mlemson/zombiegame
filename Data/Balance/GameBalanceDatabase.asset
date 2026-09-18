@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e57bdd00041f2d54db7fd762e90bcb56, type: 3}
+  m_Name: GameBalanceDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieTown.Foundation.GameBalanceDatabase
+  playerScaling: {fileID: 11400000, guid: 8ab5b5fe7dfd2dc4d902361de2bb8a3c, type: 2}
+  economy: {fileID: 11400000, guid: cac28c2a979f76b4b8f9e109a486ec23, type: 2}
+  defenseSupplies: {fileID: 11400000, guid: 01ccd6656c89fe846b660e047592163b, type: 2}
+  enemies: {fileID: 11400000, guid: dee145ded40fedc4784c47e77d7eab4a, type: 2}
+  weapons: {fileID: 11400000, guid: 0db23d4c617079243b7cd5af01832214, type: 2}
+  upgrades: {fileID: 11400000, guid: 1a705bdf5deacd140a67bf4a51936d42, type: 2}
+  crouch: {fileID: 11400000, guid: 40045670795101a4e932dfd079c33fc8, type: 2}

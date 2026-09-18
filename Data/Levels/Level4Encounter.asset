@@ -1,0 +1,194 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0480baf34b109e449adfed29c54ed557, type: 3}
+  m_Name: Level4Encounter
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieTown.Foundation.LevelEncounterProfile
+  continuousSiege: 1
+  stages:
+  - stageId: zone.level4.1
+    displayName: Entry Yard
+    baseEnemyBudget: 40
+    baseMaxAliveOverride: 65
+    spawnIntervalMin: 0.45
+    spawnIntervalMax: 0.67
+    waveDuration: 55
+    enemyPool:
+    - enemyDefinition: {fileID: 11400000, guid: 8e887a49e245a6e41b56ca8bdd3dfbf4,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: 60e5558db385ca14ab985df90710a238,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: 137da30298104394da6e12c33750d50b,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: a0779afc55d0b9645a8af9980fade204,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: ae6f339b14e305d42bb8c08147eff9a4,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    allowedSpawnGroups:
+    - Z1_FrontBreach
+    - Z1_SideBreach
+    - Siege_Front
+    gateUnlockedOnCompletion: gate.level4.workshop
+    maximumAliveSpecials: 6
+    specialWeightMultiplier: 1
+  - stageId: zone.level4.2
+    displayName: Workshop
+    baseEnemyBudget: 50
+    baseMaxAliveOverride: 90
+    spawnIntervalMin: 0.38
+    spawnIntervalMax: 0.6
+    waveDuration: 65
+    enemyPool:
+    - enemyDefinition: {fileID: 11400000, guid: 8e887a49e245a6e41b56ca8bdd3dfbf4,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: 60e5558db385ca14ab985df90710a238,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: 137da30298104394da6e12c33750d50b,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: a0779afc55d0b9645a8af9980fade204,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: ae6f339b14e305d42bb8c08147eff9a4,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    allowedSpawnGroups:
+    - Z1_FrontBreach
+    - Z1_SideBreach
+    - Z2_WorkshopLeft
+    - Z2_WorkshopRight
+    - Z2_Flank
+    - Siege_Front
+    gateUnlockedOnCompletion: gate.level4.service
+    maximumAliveSpecials: 6
+    specialWeightMultiplier: 1
+  - stageId: zone.level4.3
+    displayName: Service Deck / Fuel Bay
+    baseEnemyBudget: 60
+    baseMaxAliveOverride: 115
+    spawnIntervalMin: 0.31
+    spawnIntervalMax: 0.53
+    waveDuration: 75
+    enemyPool:
+    - enemyDefinition: {fileID: 11400000, guid: 8e887a49e245a6e41b56ca8bdd3dfbf4,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: 60e5558db385ca14ab985df90710a238,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: 137da30298104394da6e12c33750d50b,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: a0779afc55d0b9645a8af9980fade204,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: ae6f339b14e305d42bb8c08147eff9a4,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    allowedSpawnGroups:
+    - Z1_FrontBreach
+    - Z1_SideBreach
+    - Z2_WorkshopLeft
+    - Z2_WorkshopRight
+    - Z2_Flank
+    - Z3_FuelSide
+    - Z3_ServiceSide
+    - Z3_RearPressure
+    - Siege_Front
+    gateUnlockedOnCompletion: gate.level4.final
+    maximumAliveSpecials: 6
+    specialWeightMultiplier: 1
+  - stageId: zone.level4.4
+    displayName: Final Stand
+    baseEnemyBudget: 80
+    baseMaxAliveOverride: 145
+    spawnIntervalMin: 0.24
+    spawnIntervalMax: 0.46
+    waveDuration: 100
+    enemyPool:
+    - enemyDefinition: {fileID: 11400000, guid: 8e887a49e245a6e41b56ca8bdd3dfbf4,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: 60e5558db385ca14ab985df90710a238,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: 137da30298104394da6e12c33750d50b,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: a0779afc55d0b9645a8af9980fade204,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    - enemyDefinition: {fileID: 11400000, guid: ae6f339b14e305d42bb8c08147eff9a4,
+        type: 2}
+      weight: 1
+      minimumWave: 1
+      maximumWave: 0
+    allowedSpawnGroups:
+    - Z1_FrontBreach
+    - Z1_SideBreach
+    - Z2_WorkshopLeft
+    - Z2_WorkshopRight
+    - Z2_Flank
+    - Z3_FuelSide
+    - Z3_ServiceSide
+    - Z3_RearPressure
+    - Z4_West
+    - Z4_East
+    - Z4_Rear
+    - Siege_Front
+    gateUnlockedOnCompletion: 
+    maximumAliveSpecials: 6
+    specialWeightMultiplier: 1

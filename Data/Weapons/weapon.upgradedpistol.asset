@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924561e0937fdde44b0391ba49339d12, type: 3}
+  m_Name: weapon.upgradedpistol
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieTown.Foundation.WeaponDefinition
+  weaponKey: weapon.upgradedpistol
+  displayName: Heavy Revolver
+  category: Firearm
+  weaponPrefab: {fileID: 8957699284932694016, guid: 70d209dcbf34c6c4da34756fa423bb85,
+    type: 3}
+  pickupPrefab: {fileID: 0}
+  basePurchaseCost: 90

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2d66338b853c74294f03d771e2390d, type: 3}
+  m_Name: enemy.tank
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieTown.Foundation.EnemyDefinition
+  enemyKey: enemy.tank
+  displayName: Heavy zombie
+  prefab: {fileID: 6487803733278588641, guid: aea5561009dcb0841a1d3d07377d38bf, type: 3}
+  role: 4
+  baseWeight: 0.15
+  baseHealthMultiplier: 1
+  minimumStage: 2
+  pointValue: -1

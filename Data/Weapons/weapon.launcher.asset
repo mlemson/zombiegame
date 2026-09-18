@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924561e0937fdde44b0391ba49339d12, type: 3}
+  m_Name: weapon.launcher
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieTown.Foundation.WeaponDefinition
+  weaponKey: weapon.launcher
+  displayName: Disc Launcher
+  category: Firearm
+  weaponPrefab: {fileID: 1120360786528772680, guid: 38d8aaa50c0f07f4ebe6daa30081493f,
+    type: 3}
+  pickupPrefab: {fileID: 0}
+  basePurchaseCost: 700
