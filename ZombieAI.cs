@@ -231,11 +231,11 @@ namespace Unity.FPS.AI
         void OnSyncedHealthChanged(float previous, float current)
         {
             if (!IsServer && m_Health != null)
-            {
                 m_Health.CurrentHealth = Mathf.Clamp(current, 0f, m_Health.MaxHealth);
-                if (current <= 0f && !m_IsDead)
-                    ApplyRemoteDeathVisuals();
-            }
+
+            // Do not start the death presentation from health alone. The dedicated
+            // death NetworkVariable is written after headshot context, so it is the
+            // single ordered trigger for remote death visuals.
         }
 
         void OnDeadNetworkStateChanged(bool previous, bool current)
