@@ -74,6 +74,11 @@ namespace ZombieTown.Multiplayer
         public readonly NetworkVariable<bool> HealAuraActive = new(false);
         public readonly NetworkVariable<bool> IsDowned = new(false);
         public readonly NetworkVariable<float> ReviveProgress = new(0f);
+        // The owner's FPS inventory only exists authoritatively on that client.
+        // Replicate only the available reserve space so the server can decide whether
+        // a world ammo pickup may be consumed without owning the local weapon instances.
+        public readonly NetworkVariable<int> ActivePhysicalAmmoRoom =
+            new(writePerm: NetworkVariableWritePermission.Owner);
         GameObject spawnedVisual;
         float lastArmorDamageTime;
         float nextAbilityTime;
@@ -511,6 +516,59 @@ namespace ZombieTown.Multiplayer
             owned?.AddCarriablePhysicalBullets(owned.AmmoCapacity);
         }
 
+        public bool TryGrantNetworkAmmoPickup(bool useActiveWeaponBalance, int bulletCount,
+            float ammoValueBudget, int minimumRounds, int maximumRounds, bool fillToCapacity)
+        {
+            if (!IsServer || !IsSpawned || !IsReady.Value || IsDowned.Value ||
+                IsMeleeEquipped.Value || ActivePhysicalAmmoRoom.Value <= 0)
+                return false;
+
+            if (!TryResolveNetworkWeapon(EquippedWeaponKey.Value.ToString(), out WeaponController weapon) ||
+                weapon == null || weapon.IsMeleeWeapon || !weapon.HasPhysicalBullets)
+                return false;
+
+            int amount = fillToCapacity
+                ? ActivePhysicalAmmoRoom.Value
+                : useActiveWeaponBalance
+                    ? AmmoPickup.CalculateBalancedRoundCount(weapon, ammoValueBudget, minimumRounds, maximumRounds)
+                    : Mathf.Max(0, bulletCount);
+            amount = Mathf.Min(amount, ActivePhysicalAmmoRoom.Value);
+            if (amount <= 0) return false;
+
+            GrantNetworkAmmoPickupRpc(amount, RpcTarget.Single(OwnerClientId, RpcTargetUse.Temp));
+            return true;
+        }
+
+        [Rpc(SendTo.SpecifiedInParams)]
+        void GrantNetworkAmmoPickupRpc(int amount, RpcParams rpcParams = default)
+        {
+            if (!IsOwner || amount <= 0 || weapons == null) return;
+            WeaponController activeWeapon = weapons.GetActiveWeapon();
+            if (activeWeapon == null || activeWeapon.IsMeleeWeapon || !activeWeapon.HasPhysicalBullets)
+                return;
+
+            int before = activeWeapon.GetCarriedPhysicalBullets();
+            activeWeapon.AddCarriablePhysicalBullets(amount);
+            if (activeWeapon.GetCarriedPhysicalBullets() <= before) return;
+
+            AmmoPickupEvent evt = Events.AmmoPickupEvent;
+            evt.Weapon = activeWeapon;
+            EventManager.Broadcast(evt);
+            SyncOwnerActiveAmmoRoom();
+        }
+
+        void SyncOwnerActiveAmmoRoom()
+        {
+            if (!IsOwner || !IsSpawned) return;
+            int room = 0;
+            WeaponController activeWeapon = weapons != null ? weapons.GetActiveWeapon() : null;
+            if (activeWeapon != null && activeWeapon.HasPhysicalBullets && !activeWeapon.IsMeleeWeapon)
+                room = Mathf.Max(0, activeWeapon.AmmoCapacity - activeWeapon.GetCarriedPhysicalBullets());
+
+            if (ActivePhysicalAmmoRoom.Value != room)
+                ActivePhysicalAmmoRoom.Value = room;
+        }
+
         void OnPointsChanged(int previous, int current)
         {
             if (!IsOwner && IsSpawned) return;
@@ -553,6 +611,7 @@ namespace ZombieTown.Multiplayer
         }
         void Update()
         {
+            if (IsOwner && IsSpawned) SyncOwnerActiveAmmoRoom();
             if (IsServer && IsDowned.Value) TickReviveProgress();
 
             if (IsOwner && IsReady.Value && !IsDowned.Value)
