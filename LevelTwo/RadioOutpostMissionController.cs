@@ -407,6 +407,7 @@ namespace ZombieTown.LevelTwo
                 }
             }
             configure?.Invoke(zombie);
+            zombie.GetComponent<ZombieAI>()?.PrepareForNetworkSpawn();
             NetworkObject networkObject = zombie.GetComponent<NetworkObject>();
             NetworkManager manager = NetworkManager.Singleton;
             if (manager != null && manager.IsListening)
